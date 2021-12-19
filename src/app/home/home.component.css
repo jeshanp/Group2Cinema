@@ -3,3 +3,6 @@ hr{
     background-color: #ccc;
     border: none;
 }
+.visually-hidden  {
+    display: none;
+ }
