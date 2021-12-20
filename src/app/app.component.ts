@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'team2-cinema';
+  backgroundimg = '/assets/images/movietheatre.jpg';
+
+  setBackground(img:string){
+    this.backgroundimg = img;
+  }
+
 }

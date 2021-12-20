@@ -1,0 +1,12 @@
+hr {
+  height: 1px;
+  background-color: #ccc;
+  border: none;
+}
+.visually-hidden {
+  display: none;
+}
+
+.carousel-item {
+  overflow: hidden;
+}
