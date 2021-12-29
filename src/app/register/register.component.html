@@ -7,12 +7,22 @@
             <div class="card-body">
                 <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
                     <div class="form-group col-12">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" formControlName="name">
+                        <label for="fname" class="form-label">First Name</label>
+                        <input type="text" class="form-control" formControlName="fname">
                         <!-- Check if name is present as per validator -->
-                        <span *ngIf="!registrationForm.get('name').valid && registrationForm.get('name').touched"
+                        <span *ngIf="!registrationForm.get('fname').valid && registrationForm.get('fname').touched"
                             class="error-block">
-                            Please enter a name
+                            Please enter a first name
+                        </span>
+                    </div>
+
+                    <div class="form-group col-12">
+                        <label for="sname" class="form-label">Surname</label>
+                        <input type="text" class="form-control" formControlName="sname">
+                        <!-- Check if name is present as per validator -->
+                        <span *ngIf="!registrationForm.get('sname').valid && registrationForm.get('sname').touched"
+                            class="error-block">
+                            Please enter a surname
                         </span>
                     </div>
 
@@ -25,8 +35,8 @@
                             Please enter a valid email
                         </span>
                     </div>
-
-                    <div class="form-group col-12">
+                    <div>
+                    <div class="form-group col-5" style="float: left;">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" formControlName="password">
                         <!-- Check if password is valid as per validator -->
@@ -42,7 +52,7 @@
                         </span>
                     </div>
 
-                    <div class="form-group col-12">
+                    <div class="form-group col-5" style="float: right;">
                         <label for="cpassword" class="form-label">Confirm Password</label>
                         <input type="password" class="form-control" formControlName="cpassword">
                         <!-- Check if confirm password is valid and matches password as per validator -->
@@ -57,18 +67,9 @@
                             Passwords do not match
                         </span>
                     </div>
+                </div>
 
-                    <div class="form-group col-12">
-                        <label for="mobile" class="form-label">Mobile</label>
-                        <input type="tel" class="form-control" formControlName="mobile">
-                        <!-- Check if mobile number is valid as per validator -->
-                        <span *ngIf="!registrationForm.get('mobile').valid && registrationForm.get('mobile').touched"
-                            class="error-block">
-                            Please enter a valid mobile number
-                        </span>
-                    </div>
-
-                    <div class="form-group col-12" id="buttons">
+                    <div class="form-group col-12" id="buttons" style="clear: both;">
                         <button type="submit" class="btn btn-primary">Save</button>
                         <button type="reset" class="btn btn-secondary ml-2">Clear</button>
                     </div>
