@@ -1,1 +1,79 @@
-<p>register works!</p>
+<div class="row" id="registerForm">
+    <div class="col-lg-6 col-sm-10 m-auto">
+        <div class="card m-auto">
+            <div class="card-header">
+                <h5>Register</h5>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group col-12">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" formControlName="name">
+                        <!-- Check if name is present as per validator -->
+                        <span *ngIf="!registrationForm.get('name').valid && registrationForm.get('name').touched"
+                            class="error-block">
+                            Please enter a name
+                        </span>
+                    </div>
+
+                    <div class="form-group col-12">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" class="form-control" formControlName="email">
+                        <!-- Check if email is valid as per validator -->
+                        <span *ngIf="!registrationForm.get('email').valid && registrationForm.get('email').touched"
+                            class="error-block">
+                            Please enter a valid email
+                        </span>
+                    </div>
+
+                    <div class="form-group col-12">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" formControlName="password">
+                        <!-- Check if password is valid as per validator -->
+                        <span
+                            *ngIf="!registrationForm.get('password').valid && registrationForm.get('password').touched"
+                            class="error-block">
+                            <span *ngIf="registrationForm.get('password').errors['required']">
+                                Please provide a password
+                            </span>
+                            <span *ngIf="registrationForm.get('password')?.errors?.['minlength']" class="error-block">
+                                Password should not be less than 8 characters
+                            </span>
+                        </span>
+                    </div>
+
+                    <div class="form-group col-12">
+                        <label for="cpassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" formControlName="cpassword">
+                        <!-- Check if confirm password is valid and matches password as per validator -->
+                        <span
+                            *ngIf="!registrationForm.get('cpassword').valid && registrationForm.get('cpassword').touched">
+                            <span *ngIf="registrationForm.get('cpassword').hasError('required')" class="error-block">
+                            Please confirm password
+                            </span>
+                        </span>
+                        <span
+                            *ngIf="registrationForm.hasError('notSame') && registrationForm.get('cpassword').valid" class="error-block">
+                            Passwords do not match
+                        </span>
+                    </div>
+
+                    <div class="form-group col-12">
+                        <label for="mobile" class="form-label">Mobile</label>
+                        <input type="tel" class="form-control" formControlName="mobile">
+                        <!-- Check if mobile number is valid as per validator -->
+                        <span *ngIf="!registrationForm.get('mobile').valid && registrationForm.get('mobile').touched"
+                            class="error-block">
+                            Please enter a valid mobile number
+                        </span>
+                    </div>
+
+                    <div class="form-group col-12" id="buttons">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="reset" class="btn btn-secondary ml-2">Clear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

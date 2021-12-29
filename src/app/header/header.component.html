@@ -8,19 +8,19 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: right;" [ngbCollapse]="navBarCollapsed">
           <ul class="navbar-nav mr-auto" style="display: flex;">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" routerLink="/" routerLinkActive="active">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/films">Now Showing</a>
+              <a class="nav-link" routerLink="/films" routerLinkActive="active">Now Showing</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/upcoming">Upcoming</a>
+              <a class="nav-link" routerLink="/upcoming" routerLinkActive="active">Upcoming</a>
             </li>
             <li class="nav-item" [hidden]="loginHidden">
-              <a class="nav-link" href="/login">Login/Register</a>
+              <a class="nav-link" routerLink="/login" routerLinkActive="active">Login/Register</a>
             </li>
             <li class="nav-item" [hidden]="dashboardHidden">
-              <a class="nav-link" href="#">Dashboard</a>
+              <a class="nav-link" href="#" routerLinkActive="active">Dashboard</a>
             </li>
             <li class="nav-item dropdown" [hidden]="dropdownHidden">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
