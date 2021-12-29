@@ -11,6 +11,7 @@ import { FooterComponent } from './footer/footer.component';
 import { UpcomingComponent } from './upcoming/upcoming.component';
 import { FilmsComponent } from './films/films.component';
 import { RegisterComponent } from './register/register.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { RegisterComponent } from './register/register.component';
     UpcomingComponent,
     FilmsComponent,
     RegisterComponent,
+    ContactusComponent,
   ],
   imports: [
     BrowserModule,
