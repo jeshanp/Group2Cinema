@@ -4,13 +4,19 @@ import { LoginComponent } from './login/login.component';
 import { UpcomingComponent } from './upcoming/upcoming.component';
 import { FilmsComponent } from './films/films.component';
 import { RegisterComponent } from './register/register.component';
+import { BookingsComponent } from './bookings/bookings.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ContactusComponent } from './contactus/contactus.component';
 
 const routes: Routes = [
+  { path: '', component: FilmsComponent },
   { path: 'login', component: LoginComponent },
   { path: 'upcoming', component: UpcomingComponent },
   { path: 'films', component: FilmsComponent },
   { path: 'register', component: RegisterComponent },
-  { path: '', component: FilmsComponent },
+  { path: 'bookings', component: BookingsComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'contact', component: ContactusComponent },
 ];
 
 @NgModule({

@@ -28,3 +28,11 @@
     padding-left: 50px;
   }
 }
+
+.dropdown-menu {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.menu-item {
+  color: white;
+}

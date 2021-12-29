@@ -8,9 +8,13 @@
         using innovating and cutting edge technologies. With a wide range of films and VIP treatment for all, you'll
         wish you had experienced our service sooner.
       </h5>
-        <br>
+      <br>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate, corrupti labore suscipit repellat, inventore distinctio nulla delectus recusandae natus accusantium perspiciatis molestiae modi consequatur reprehenderit repellendus, dolores officiis aliquam officia? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum voluptatum sequi possimus vero impedit nulla voluptas in doloribus mollitia, vitae dicta earum. Quae iure eaque praesentium labore architecto, ea ab.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate, corrupti labore suscipit repellat,
+        inventore distinctio nulla delectus recusandae natus accusantium perspiciatis molestiae modi consequatur
+        reprehenderit repellendus, dolores officiis aliquam officia? Lorem ipsum dolor sit, amet consectetur adipisicing
+        elit. Eum voluptatum sequi possimus vero impedit nulla voluptas in doloribus mollitia, vitae dicta earum. Quae
+        iure eaque praesentium labore architecto, ea ab.
       <p>
     </div>
     <div class="col-lg-2">
@@ -18,23 +22,26 @@
     <div class="col-lg-5 loginarea">
       <div class="form-area">
         <div class="container-fluid form_container">
-          <form>
+          <form #loginForm='ngForm' (ngSubmit)="onLogin(loginForm)">
             <div class="input-group mb-3">
-              <input class="form-control border-1" name="" type="text" value="" placeholder="Username" />
+              <input class="form-control border-1" name="" type="text" value="" placeholder="Username" required ngModel
+                name="username" />
             </div>
             <div class="input-group mb-3">
-              <input class="form-control border-1" name="" type="password" value="" placeholder="Password" />
+              <input class="form-control border-1" type="password" value="" placeholder="Password" required ngModel
+                name="password" />
             </div>
-              <div><a href="#">Forgot your password?</a></div>
-            <div class="d-flex justify-content-center mt-3"><button class="btn btn-block"
-                type="button" id="loginbutton">Login</button></div>
+            <div><a href="#">Forgot your password?</a></div>
+            <div class="d-flex justify-content-center mt-3">
+              <button class="btn btn-block" type="submit" id="loginbutton" [disabled]="!loginForm.valid">Login</button>
+            </div>
           </form>
         </div>
         <div>
           <div style="margin: 20px;">
             <div style="float: left;">
               <h6>
-              Don't have an account?
+                Don't have an account?
               </h6>
             </div>
             <div style="float: right;">

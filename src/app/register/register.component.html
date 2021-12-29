@@ -10,7 +10,7 @@
                         <label for="fname" class="form-label">First Name</label>
                         <input type="text" class="form-control" formControlName="fname">
                         <!-- Check if name is present as per validator -->
-                        <span *ngIf="!registrationForm.get('fname').valid && registrationForm.get('fname').touched"
+                        <span *ngIf="!registrationForm.get('fname').valid && (registrationForm.get('fname').touched || userSubmitted)"
                             class="error-block">
                             Please enter a first name
                         </span>
@@ -20,7 +20,7 @@
                         <label for="sname" class="form-label">Surname</label>
                         <input type="text" class="form-control" formControlName="sname">
                         <!-- Check if name is present as per validator -->
-                        <span *ngIf="!registrationForm.get('sname').valid && registrationForm.get('sname').touched"
+                        <span *ngIf="!registrationForm.get('sname').valid && (registrationForm.get('sname').touched || userSubmitted)"
                             class="error-block">
                             Please enter a surname
                         </span>
@@ -30,7 +30,7 @@
                         <label for="email" class="form-label">Email</label>
                         <input type="text" class="form-control" formControlName="email">
                         <!-- Check if email is valid as per validator -->
-                        <span *ngIf="!registrationForm.get('email').valid && registrationForm.get('email').touched"
+                        <span *ngIf="!registrationForm.get('email').valid && (registrationForm.get('email').touched || userSubmitted)"
                             class="error-block">
                             Please enter a valid email
                         </span>
@@ -41,7 +41,7 @@
                         <input type="password" class="form-control" formControlName="password">
                         <!-- Check if password is valid as per validator -->
                         <span
-                            *ngIf="!registrationForm.get('password').valid && registrationForm.get('password').touched"
+                            *ngIf="!registrationForm.get('password').valid && (registrationForm.get('password').touched || userSubmitted)"
                             class="error-block">
                             <span *ngIf="registrationForm.get('password').errors['required']">
                                 Please provide a password
@@ -57,7 +57,7 @@
                         <input type="password" class="form-control" formControlName="cpassword">
                         <!-- Check if confirm password is valid and matches password as per validator -->
                         <span
-                            *ngIf="!registrationForm.get('cpassword').valid && registrationForm.get('cpassword').touched">
+                            *ngIf="!registrationForm.get('cpassword').valid && (registrationForm.get('cpassword').touched || userSubmitted)">
                             <span *ngIf="registrationForm.get('cpassword').hasError('required')" class="error-block">
                             Please confirm password
                             </span>
@@ -70,7 +70,7 @@
                 </div>
 
                     <div class="form-group col-12" id="buttons" style="clear: both;">
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                         <button type="reset" class="btn btn-secondary ml-2">Clear</button>
                     </div>
                 </form>

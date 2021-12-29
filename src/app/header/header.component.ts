@@ -7,13 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   isMenuCollapsed = true;
-  dashboardHidden = true;
   loginHidden = false;
   dropdownHidden = true;
   navBarCollapsed = true;
-  isLoggedin = false;
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  loggedIn() {
+    return localStorage.getItem('token');
+  }
+
+  onLogout() {
+    localStorage.removeItem('token');
+  }
 }

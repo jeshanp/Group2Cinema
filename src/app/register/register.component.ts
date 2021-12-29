@@ -15,6 +15,8 @@ import {
 })
 export class RegisterComponent implements OnInit {
   registrationForm: FormGroup;
+  user: any = {};
+  userSubmitted: boolean;
 
   //Check if passwords match
   checkPasswords: ValidatorFn = (
@@ -45,10 +47,6 @@ export class RegisterComponent implements OnInit {
           Validators.required,
           Validators.minLength(8),
         ]),
-        mobile: new FormControl(null, [
-          Validators.required,
-          Validators.maxLength(12),
-        ]),
       },
       this.checkPasswords
     );
@@ -56,5 +54,34 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     console.log(this.registrationForm);
+    console.log(this.findInvalidControls());
+    this.userSubmitted = true;
+    if (this.registrationForm.valid) {
+      this.user = Object.assign(this.user, this.registrationForm.value);
+      this.addUser(this.user);
+      this.userSubmitted = false;
+    }
+  }
+
+  public findInvalidControls() {
+    const invalid = [];
+    const controls = this.registrationForm.controls;
+    for (const name in controls) {
+      if (controls[name].invalid) {
+        invalid.push(name);
+      }
+    }
+    return invalid;
+  }
+
+  addUser(user: any) {
+    let users = [];
+    if (localStorage.getItem('Users')) {
+      users = JSON.parse(localStorage.getItem('Users'));
+      users = [user, ...users];
+    } else {
+      users = [user];
+    }
+    localStorage.setItem('Users', JSON.stringify(users));
   }
 }

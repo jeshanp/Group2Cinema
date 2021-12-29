@@ -14,3 +14,7 @@
 .error-block {
   color: red;
 }
+
+.btn-primary {
+  margin-right: 10px;
+}

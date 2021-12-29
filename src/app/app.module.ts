@@ -12,6 +12,9 @@ import { UpcomingComponent } from './upcoming/upcoming.component';
 import { FilmsComponent } from './films/films.component';
 import { RegisterComponent } from './register/register.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { AuthService } from './services/auth.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { BookingsComponent } from './bookings/bookings.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,8 @@ import { ContactusComponent } from './contactus/contactus.component';
     FilmsComponent,
     RegisterComponent,
     ContactusComponent,
+    DashboardComponent,
+    BookingsComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,7 @@ import { ContactusComponent } from './contactus/contactus.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
