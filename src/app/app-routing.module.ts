@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { ShowingComponent } from './showing/showing.component';
 
 const routes: Routes = [
   { path: '', component: FilmsComponent },
@@ -17,6 +18,8 @@ const routes: Routes = [
   { path: 'bookings', component: BookingsComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'contact', component: ContactusComponent },
+  { path: 'showing/:slug', component: ShowingComponent },
+  { path: 'showing/:slug/:show.key/:time', component: BookingsComponent },
 ];
 
 @NgModule({

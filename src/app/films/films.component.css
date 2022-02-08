@@ -30,3 +30,8 @@ hr {
 .btn {
   background-color: maroon;
 }
+
+.movie-thumbnail{
+  height: 250px;
+
+}
