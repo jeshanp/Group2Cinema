@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import 'bootstrap';
+import { Movie, movies } from 'src/movie';
 
 @Component({
   selector: 'app-films',
@@ -7,15 +9,18 @@ import 'bootstrap';
   styleUrls: ['./films.component.css'],
 })
 export class FilmsComponent implements OnInit {
+
   images = [
     '../assets/images/spiderman.jpg',
     '../assets/images/matrix.jpg',
     '../assets/images/gucci.jpg',
   ];
-  longText =
-    'The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.';
+  movies:Movie[];
 
-  constructor() {}
+  constructor(private http:HttpClient) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    let response = this.http.get("http://localhost:8081/api/v1/movies");
+    response.subscribe((data)=>this.movies=data as Movie[])
+  }
 }
