@@ -15,7 +15,8 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { AuthService } from './services/auth.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookingsComponent } from './bookings/bookings.component';
-
+import { ShowingComponent } from './showing/showing.component';
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,8 @@ import { BookingsComponent } from './bookings/bookings.component';
     ContactusComponent,
     DashboardComponent,
     BookingsComponent,
+    ShowingComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,7 @@ import { BookingsComponent } from './bookings/bookings.component';
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
