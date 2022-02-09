@@ -9,18 +9,17 @@ import { Movie, movies } from 'src/movie';
   styleUrls: ['./films.component.css'],
 })
 export class FilmsComponent implements OnInit {
-
   images = [
     '../assets/images/spiderman.jpg',
     '../assets/images/matrix.jpg',
     '../assets/images/gucci.jpg',
   ];
-  movies:Movie[];
+  movies: Movie[];
 
-  constructor(private http:HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    let response = this.http.get("http://localhost:8081/api/v1/movies");
-    response.subscribe((data)=>this.movies=data as Movie[])
+    let response = this.http.get('http://localhost:8081/api/v1/movies');
+    response.subscribe((data) => (this.movies = data as Movie[]));
   }
 }
