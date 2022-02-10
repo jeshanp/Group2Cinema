@@ -13,12 +13,19 @@
 
 <div class="container-fluid w-65 mt-3 ">
     <div class="card flex-row flex-wrap bg-dark text-white">
-        <div class="card-block px-3">
+        <div class="card-block px-3 mt-3">
             <h4 class="card-title">Bookings</h4>
             <hr>
-            <p class="card-text">Booking 1</p>
-            <p class="card-text">Booking 2</p>
-            <a href="#" class="btn btn-primary mb-2">Button</a>
+            <div
+                *ngFor="let ticket of bookingList"
+                class="card bg-dark mx-1 mb-3 border-0" style="float:left; padding-right: 30px;"
+              >
+            <p class="card-text">Movie: {{ticket.movieName}}</p>
+            <p class="card-text">Time: {{ticket.time}}</p>
+            <p class="card-text">Date: {{ticket.date}}</p>
+            <p class="card-text">Number of tickets: {{ticket.numberOfTickets}}</p>
+            <a class="btn btn-primary mb-2" (click)="printInfo()">Modify Booking</a>
+            </div>
         </div>
     </div>
 </div>

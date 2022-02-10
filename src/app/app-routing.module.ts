@@ -8,9 +8,11 @@ import { BookingsComponent } from './bookings/bookings.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ShowingComponent } from './showing/showing.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { BookingSuccessComponent } from './booking-success/booking-success.component';
 
 const routes: Routes = [
-  { path: '', component: FilmsComponent },
+  { path: '', component: HomepageComponent },
   { path: 'login', component: LoginComponent },
   { path: 'upcoming', component: UpcomingComponent },
   { path: 'films', component: FilmsComponent },
@@ -20,6 +22,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactusComponent },
   { path: 'showing/:slug', component: ShowingComponent },
   { path: 'showing/:slug/:show.key/:time', component: BookingsComponent },
+  { path: 'bookings/success/:id', component: BookingSuccessComponent },
 ];
 
 @NgModule({

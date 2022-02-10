@@ -16,7 +16,9 @@ import { AuthService } from './services/auth.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { ShowingComponent } from './showing/showing.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { HomepageComponent } from './homepage/homepage.component';
+import { BookingSuccessComponent } from './booking-success/booking-success.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,8 @@ import {HttpClientModule} from '@angular/common/http'
     DashboardComponent,
     BookingsComponent,
     ShowingComponent,
+    HomepageComponent,
+    BookingSuccessComponent,
   
   ],
   imports: [
