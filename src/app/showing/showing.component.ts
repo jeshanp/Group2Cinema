@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Movie, movies } from 'src/movie';
+import { Movie} from 'src/movie';
 import { Show } from 'src/show';
 
 @Component({
@@ -11,6 +11,7 @@ import { Show } from 'src/show';
   styleUrls: ['./showing.component.css'],
 })
 export class ShowingComponent implements OnInit {
+  movies:Movie[];
   movie: Movie;
   show: Show ;
   shows: Show[] = [];
@@ -21,13 +22,15 @@ export class ShowingComponent implements OnInit {
     const routeParams = this.route.snapshot.paramMap;
     const movieSlugFromRoute = routeParams.get('slug');
     let response = this.http.get<Show[]>('http://localhost:8081/api/v1/show');
+    let movieResponse = this.http.get("http://localhost:8081/api/v1/movies");
+    movieResponse.subscribe((data)=>this.movies=data as Movie[])
 
     response.subscribe((data) => {
       for (let key in data) {
         if (data.hasOwnProperty(key))
           this.shows.push(data[key]), console.log(data[key].showId);
       }
-      this.movie = movies.find((movie) => movie.slug === movieSlugFromRoute);
+      this.movie = this.movies.find((movie) => movie.slug === movieSlugFromRoute);
       this.show = this.shows.find((show) =>
         
           show.movie.movieName === this.movie.movieName
