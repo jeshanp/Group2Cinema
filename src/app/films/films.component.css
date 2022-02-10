@@ -18,16 +18,16 @@ hr {
   overflow: hidden;
 }
 
-.container-fluid{
+.container-fluid {
   padding-left: 30px;
   padding-right: 30px;
 }
 
-.card{
+.card {
   border-radius: 10px;
 }
 
-.btn{
+.btn {
   background-color: maroon;
 }
 

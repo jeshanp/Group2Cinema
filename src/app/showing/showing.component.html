@@ -19,20 +19,20 @@
           <hr />
           <p class="card-text">Starring: {{ movie.starring.join(", ") }}</p>
           <p class="card-text">Running time: {{ movie.runTime }}</p>
-          <div *ngFor="let show of myMap | keyvalue">
-            <h5 class="mx-1">{{ show.key }}</h5>
+          <div *ngFor="let numberOfShows of myMap | keyvalue">
+            <h5 class="mx-1">{{ numberOfShows.key }}</h5>
             <div class="d-flex ml-auto">
               <div
-                *ngFor="let time of show.value"
+                *ngFor="let time of numberOfShows.value"
                 class="card bg-secondary mx-1 mb-3"
                 style="width: 10rem"
               >
                 <div class="card-body">
                   <p class="card-text">{{ time }}</p>
-                  <p class="card-text">£ {{ movie.price }}</p>
+                  <p class="card-text">£ {{ this.show.price }}</p>
                   <a
                     class="stretched-link"
-                    routerLink="/showing/{{ movie.slug }}/{{show.key}}/{{ time }}"
+                    routerLink="/showing/{{ movie.slug }}/{{numberOfShows.key}}/{{ time }}"
                     routerLinkActive="active"
                   ></a>
                 </div>
