@@ -63,6 +63,7 @@ export class BookingsComponent implements OnInit {
     this.booking.movieName = this.movieName;
     this.booking.time = this.time;
     this.booking.numberOfTickets = this.numberOfTickets;
+    this.booking.customerEmail = 'example@mail.com';
     console.log(this.booking.movieName);
     // this.bookingService.addBooking(this.booking).subscribe((data) => {
     //   console.log(data);
