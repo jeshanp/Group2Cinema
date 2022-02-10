@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import 'bootstrap';
 import { Movie, movies } from 'src/movie';
+import { loggedInStatus } from '../loginstatus';
 
 @Component({
   selector: 'app-films',
@@ -17,6 +18,10 @@ export class FilmsComponent implements OnInit {
   movies: Movie[];
 
   constructor(private http: HttpClient) {}
+
+  loggedIn() {
+    return loggedInStatus.loggedIn;
+  }
 
   ngOnInit(): void {
     let response = this.http.get('http://localhost:8081/api/v1/movies');

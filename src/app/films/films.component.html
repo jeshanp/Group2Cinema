@@ -52,7 +52,12 @@
         <a
           class="btn btn-primary mb-2 mt-5"
           routerLink="/showing/{{ movie.slug}}"
-          routerLinkActive="active"
+          routerLinkActive="active" *ngIf="loggedIn()"
+          >Book ticket</a>
+          <a
+          class="btn btn-primary mb-2 mt-5"
+          routerLink="/register"
+          routerLinkActive="active" *ngIf="!loggedIn()"
           >Book ticket</a>
       </div>
     </div>
