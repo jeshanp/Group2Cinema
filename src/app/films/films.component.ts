@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import 'bootstrap';
-import { Movie, movies } from 'src/movie';
+import { Movie } from 'src/movie';
+
 
 @Component({
   selector: 'app-films',
