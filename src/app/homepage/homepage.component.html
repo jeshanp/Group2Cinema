@@ -1,17 +1,45 @@
-<div class="intro">
-    <h2>Welcome to Team 2 cinema</h2>
-    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, magnam perferendis! Numquam recusandae nisi laboriosam voluptatibus, id, inventore expedita ratione mollitia, pariatur nesciunt rerum ea. Illo soluta repudiandae ad molestias?</h3>
+<div class="introduction">
+    <h2>Welcome to Team 2 Cinema</h2>
+    <h5>The finest cinema experience.</h5>
+    <br>
+    <br>
+    <h4>Bookings available now! For full list of movies visit: <a routerLink="/films" routerLinkActive="active" style="display:inline">now showing</a> </h4> 
+    <br>
+    <br>
 </div>
 
-<div class="col-lg-3" style="float: left;">
-    <img src="/assets/images/gucci.jpg" style="width: 100%;">
-</div>
-<div class="col-lg-3" style="float: left;">
-    <img src="/assets/images/gucci.jpg" style="width: 100%;">
-</div>
-<div class="col-lg-3" style="float: left;">
-    <img src="/assets/images/gucci.jpg" style="width: 100%;">
-</div>
-<div class="col-lg-3" style="float: left;">
-    <img src="/assets/images/gucci.jpg" style="width: 100%;">
+<div
+  id="mycarousel"
+  class="carousel slide bg-light.bg-gradient"
+  data-ride="carousel"
+>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" [src]="images[0]" alt="First slide" />
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" [src]="images[1]" alt="Second slide" />
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" [src]="images[2]" alt="Second slide" />
+    </div>
+    <div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#mycarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#mycarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
 </div>

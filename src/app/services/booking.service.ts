@@ -8,6 +8,7 @@ export class BookingService {
   baseURL: string = 'http://localhost:8081/api/v1/booking';
 
   currentBooking: Booking;
+  currentBookingRef: String;
   count: number = 0;
 
   constructor(private http: HttpClient) {}

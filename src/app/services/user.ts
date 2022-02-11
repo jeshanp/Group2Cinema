@@ -1,15 +1,13 @@
 export class User {
+  id: number;
 
-    id:number;
+  fname: string;
 
-    fname: string;
+  lname: string;
 
-    lname: string;
+  emailId: string;
 
-    emailId : string;
+  password: string;
 
-    password: string;
-
-    constructor(){}
-
+  constructor() {}
 }
