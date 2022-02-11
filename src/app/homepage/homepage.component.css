@@ -1,0 +1,21 @@
+.visually-hidden {
+  display: none;
+}
+
+.carousel-item {
+  overflow: hidden;
+}
+
+.carousel {
+  max-width: 80%;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.introduction {
+  margin-top: 2%;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
+}

@@ -14,14 +14,13 @@ import { loggedInStatus } from '../loginstatus';
 export class LoginComponent implements OnInit {
   user = new User();
   msg = ' ';
-  isLoggedIn = loggedInStatus.loggedIn;
   constructor(private _service: RegistrationService, private _route: Router) {}
 
   loginUser() {
     this._service.loginUserFronRemote(this.user).subscribe(
       (data) => {
         console.log('response received');
-        this._route.navigate(['/dashboard']);
+        this._route.navigate(['/register']);
         loggedInStatus.loggedIn = true;
       },
       (error) => {

@@ -79,7 +79,7 @@ export class BookingsComponent implements OnInit {
         this.postId = data.id;
       });
     this.bookingService.saveBooking(this.booking);
-
+    this.bookingService.currentBookingRef = this.bookingId;
     this.bookingString = JSON.stringify(this.booking);
   }
 }

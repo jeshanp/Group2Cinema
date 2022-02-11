@@ -15,7 +15,8 @@ export class FilmsComponent implements OnInit {
     '../assets/images/matrix.jpg',
     '../assets/images/gucci.jpg',
   ];
-  movies: Movie[];
+
+  moviesList: Movie[];
 
   constructor(private http: HttpClient) {}
 
@@ -24,7 +25,8 @@ export class FilmsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.moviesList = movies;
     let response = this.http.get('http://localhost:8081/api/v1/movies');
-    response.subscribe((data) => (this.movies = data as Movie[]));
+    response.subscribe((data) => (this.moviesList = data as Movie[]));
   }
 }
